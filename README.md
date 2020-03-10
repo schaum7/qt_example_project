@@ -1,4 +1,4 @@
-#QT Beispiel Projekt
+## QT Beispiel Projekt
 
 install requirements
 
