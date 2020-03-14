@@ -34,9 +34,12 @@ class MainWindow(QtWidgets.QMainWindow):
     def on_pb_berechne_bmi_click(self):
         groesse_m = float(self.ui.le_height_m.text())
         gewicht_kg = float(self.ui.le_weight_kg.text())
-        bmi = gewicht_kg/(groesse_m**2)
+        if groesse_m == 0.0:
+            self.ui.lbl_bmi.setText("Größe darf nicht 0 sein!")
+        else:
+            bmi = gewicht_kg/(groesse_m**2)
 
-        self.ui.lbl_bmi.setText("BMI {0:.3f}".format(bmi))
+            self.ui.lbl_bmi.setText("BMI {0:.3f}".format(bmi))
 
 
 window = MainWindow()
